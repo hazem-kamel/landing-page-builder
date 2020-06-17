@@ -8,7 +8,6 @@ const Carousel = (props) => {
         const resetAuto = currentImageIndex === props.images.length;
         const index = resetAuto ? 0 : currentImageIndex + 1;
         setCurrentImageIndex(index);
-        console.log(index);
       }
     }, 2000);
   }, [props.images]);
@@ -31,7 +30,7 @@ const Carousel = (props) => {
     <div className="slideshow-container">
       {/* render images */}
       {activeImagesFromState.map((image, index) => (
-        <img key={index} src={image} alt="" />
+        <img key={index} src={image} />
       ))}
       <div>
         <button onClick={(e) => nextPrev(true)}>Next</button>

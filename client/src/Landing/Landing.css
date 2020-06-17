@@ -1,0 +1,89 @@
+.main-landing {
+  padding: 20px;
+  margin: auto;
+}
+.main-logo-title {
+  padding: 10px;
+  display: flex;
+  max-width: 610px;
+  height: auto;
+  margin: auto;
+}
+.logo-section-main {
+  padding: 5px;
+}
+.logo-section-main button {
+  background-color: rgb(0, 162, 255);
+  border: none;
+  color: whitesmoke;
+  margin-top: 5px !important;
+  padding: 5px;
+  margin: auto;
+  display: flex;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+.title-section-main {
+  padding: 5px;
+}
+.title-section-main label {
+  margin: 5px;
+}
+.title-section-main input {
+  margin: 5px;
+}
+.color-picker-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-add-button {
+  background-color: rgb(0, 162, 255);
+  border: none;
+  color: whitesmoke;
+  margin-top: 10px;
+  font-size: medium;
+  padding: 20px;
+  border-radius: 20px;
+  font-weight: bolder;
+}
+
+.buttons-preview-section {
+  padding: 10px;
+  max-width: 310px;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+
+  margin-top: 10px;
+}
+.buttons-preview-section input {
+  margin: 10px;
+}
+.buttons-preview-section label {
+  margin: 5px;
+}
+.adding-button {
+  background-color: rgb(0, 162, 255);
+  border: none;
+  color: whitesmoke;
+  margin-top: 10px !important;
+  padding: 10px;
+  margin: auto;
+  font-weight: bolder;
+  width: 70px;
+  font-size: medium;
+  border-radius: 2px;
+}
+
+.main-preview {
+  padding: 20px;
+  margin-top: 10px;
+}
+@media screen and (max-device-width: 769px) {
+  .main-logo-title {
+    flex-direction: column;
+  }
+}

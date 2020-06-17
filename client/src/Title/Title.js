@@ -1,9 +1,17 @@
 import React from "react";
+import "./Title.css";
 const Title = (props) => {
   return (
-    <div>
-      <h3>{props.title}</h3>
-      <p>hi</p>
+    <div className="title-div">
+      <h3
+        className="title-preview"
+        style={{
+          backgroundColor: props.propTitle.background.color,
+          color: props.propTitle.color.color,
+        }}
+      >
+        {props.propTitle.text}
+      </h3>
     </div>
   );
 };

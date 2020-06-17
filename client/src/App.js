@@ -4,14 +4,7 @@ import Landing from "./Landing/Landing";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">AppGain</h1>
-        <img
-          src="https://res.cloudinary.com/appgain/image/upload/v1534373384/appgain/logo.png"
-          className="App-logo"
-          alt="logo"
-        ></img>
-      </header>
+      <h2 className="App-title">Landing Page Creator</h2>
       <Landing />
     </div>
   );
