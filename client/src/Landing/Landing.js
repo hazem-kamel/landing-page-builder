@@ -27,10 +27,9 @@ const Landing = () => {
   const [allButtons, addAllButtons] = useState([{}]);
   const [carouselImages, carouselImagesUpdater] = useState([]);
   const [logoURL, logoURLUpdater] = useState("");
-  const [carouselURL, carouselURLUpdater] = useState([]);
+  const [carouselURL, carouselURLUpdater] = useState([""]);
   useEffect((e) => {}, [carouselImages]);
   var apiUrl = "https://api.imgur.com/3/image";
-
   const logoUploader = (event) => {
     const img = event.target.files[0];
     logoUpdater({
@@ -48,7 +47,7 @@ const Landing = () => {
     };
     axios
       .post(apiUrl, data, config)
-      .then((res) => console.log(res.data.data.link))
+      .then((res) => logoURLUpdater(res.data.data.link))
       .catch((err) => console.log(err));
   };
   const logoStyle = (e) => {
@@ -60,7 +59,6 @@ const Landing = () => {
       logoUpdater({ ...logoImg, style: "normal" });
     }
   };
-
   const colorFunction = (e) => {
     var color = e.hex;
     titleUserUpdater({ ...titleUser, color: { color } });
@@ -69,13 +67,11 @@ const Landing = () => {
     var color = e.hex;
     titleUserUpdater({ ...titleUser, background: { color } });
   };
-
   const addButtons = (e) => {
     var buttonadded = button;
     ShowingButton(false);
     addAllButtons((allButtons) => [...allButtons, buttonadded]);
   };
-  console.log(allButtons);
   const carouselUploader = (e) => {
     backendCarousel(e);
     const reader = new FileReader();
@@ -99,7 +95,9 @@ const Landing = () => {
     };
     axios
       .post(apiUrl, data, config)
-      .then((res) => console.log(res))
+      .then((res) => {
+        carouselURLUpdater([...carouselURL, res.data.data.link]);
+      })
       .catch((err) => console.log(err));
   };
   return (
@@ -197,8 +195,7 @@ const Landing = () => {
             }
           ></GithubPicker>
           <button className="adding-button" onClick={(e) => addButtons()}>
-            {" "}
-            ADD{" "}
+            ADD
           </button>
         </div>
       ) : null}

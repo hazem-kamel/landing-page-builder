@@ -1,13 +1,9 @@
 import React from "react";
 import "./Button.css";
 const ButtonComponent = (props) => {
-  console.log(props.buttons);
   return (
     <div>
       {props.buttons.map((button) => {
-        {
-          console.log(button);
-        }
         if (button.text) {
           return (
             <div className="buttons-section-preview">

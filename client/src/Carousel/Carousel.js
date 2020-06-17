@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./Carousel.css";
 const Carousel = (props) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   useEffect(() => {
-    setTimeout(() => {
-      if (props.images.length > 0) {
-        const resetAuto = currentImageIndex === props.images.length;
+    if (props.images.length > 1) {
+      let timer = setTimeout(() => {
+        const resetAuto = currentImageIndex === props.images.length - 1;
         const index = resetAuto ? 0 : currentImageIndex + 1;
         setCurrentImageIndex(index);
-      }
-    }, 2000);
-  }, [props.images]);
+      }, 3000);
+      return () => window.clearTimeout(timer);
+    }
+  });
   const nextPrev = (e) => {
     if (e) {
       const resetIndex = currentImageIndex === props.images.length - 1;
@@ -32,10 +34,16 @@ const Carousel = (props) => {
       {activeImagesFromState.map((image, index) => (
         <img key={index} src={image} />
       ))}
-      <div>
-        <button onClick={(e) => nextPrev(true)}>Next</button>
-        <button onClick={(e) => nextPrev(false)}>Previous</button>
-      </div>
+      {props.images.length > 1 ? (
+        <div className="buttons">
+          <button className="next-button" onClick={(e) => nextPrev(true)}>
+            &#8249;
+          </button>
+          <button className="prev-button" onClick={(e) => nextPrev(false)}>
+            &#8250;
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-/* Slideshow container */
 .slideshow-container {
   max-width: 760px;
   margin: auto;
@@ -10,7 +9,34 @@ img {
   max-width: 100%;
   height: 300px;
 }
-
+.buttons {
+  margin: 5px;
+}
+.next-button {
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-weight: bolder;
+  font-size: 60px;
+  color: rgb(2, 170, 114);
+  margin-right: 30px;
+}
+.prev-button {
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-weight: bolder;
+  font-size: 60px;
+  color: rgb(2, 170, 114);
+}
 @media only screen and (max-width: 1016px) {
   .slideshow-container img {
     width: 300px;

@@ -9,9 +9,11 @@
   margin-top: 5px !important;
   padding: 10px;
   margin: auto;
+  border-color: transparent;
   display: flex;
   font-size: large;
   font-weight: bolder;
+  margin: 5px;
   border-radius: 10px;
 }
 .button .link {
