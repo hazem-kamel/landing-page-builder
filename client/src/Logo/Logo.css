@@ -1,5 +1,5 @@
 .rounded-class {
-  width: 160px;
+  width: 190px;
   height: 160px;
   position: relative;
   overflow: hidden;
@@ -8,9 +8,7 @@
 }
 .preview-logo-rounded {
   margin: 0 auto;
-  margin-left: -25%;
-  height: 100%;
-  width: auto;
+  height: 250px;
 }
 
 .box-class {
@@ -28,7 +26,6 @@
 }
 .preview-logo-normal {
   max-width: 100%;
-
   height: auto;
   margin: auto;
 }

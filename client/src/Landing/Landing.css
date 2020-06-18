@@ -1,6 +1,7 @@
 .main-landing {
   padding: 20px;
   margin: auto;
+  background-color: rgb(141, 250, 199);
 }
 .main-logo-title {
   padding: 10px;
@@ -80,8 +81,9 @@
 .main-preview {
   padding: 20px;
   margin-top: 20px !important;
-  border-color: rgb(255, 89, 0);
+  border-color: rgb(0, 162, 255);
   margin: 4px;
+  background-color: white;
   border-style: outset;
   padding: 4px;
   border-width: 3px;

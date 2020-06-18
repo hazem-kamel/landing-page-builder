@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { GithubPicker, TwitterPicker } from "react-color";
+import { GithubPicker } from "react-color";
+import { useHistory } from "react-router-dom";
 import ButtonComponent from "../Button/Buttons";
 import Title from "../Title/Title";
 import Logo from "../Logo/Logo";
 import Carousel from "../Carousel/Carousel";
 import axios from "axios";
 import "./Landing.css";
-const Landing = () => {
+import io from "socket.io-client";
+
+const Landing = (props) => {
   const [showElemntButton, ShowingButton] = useState(false);
   const [logoImg, logoUpdater] = useState({
     image: "",
@@ -24,11 +27,17 @@ const Landing = () => {
     color: "",
     background: "",
   });
+  //const socket = io();
   const [allButtons, addAllButtons] = useState([{}]);
   const [carouselImages, carouselImagesUpdater] = useState([]);
   const [logoURL, logoURLUpdater] = useState("");
   const [carouselURL, carouselURLUpdater] = useState([""]);
-  useEffect((e) => {}, [carouselImages]);
+  useEffect((e) => {
+    // socket.emit("title", titleUser);
+    //socket.emit("buttons", allButtons);
+    // socket.emit("carousel", carouselURL);
+    //socket.emit("logo", logoURL);
+  }, []);
   var apiUrl = "https://api.imgur.com/3/image";
   const logoUploader = (event) => {
     const img = event.target.files[0];
@@ -51,9 +60,9 @@ const Landing = () => {
       .catch((err) => console.log(err));
   };
   const logoStyle = (e) => {
-    if (e == "rounded") {
+    if (e === "rounded") {
       logoUpdater({ ...logoImg, style: "rounded" });
-    } else if (e == "box") {
+    } else if (e === "box") {
       logoUpdater({ ...logoImg, style: "box" });
     } else {
       logoUpdater({ ...logoImg, style: "normal" });
@@ -100,11 +109,12 @@ const Landing = () => {
       })
       .catch((err) => console.log(err));
   };
+  const history = useHistory();
   return (
     <div className="main-landing">
       <div className="main-logo-title">
         <div className="logo-section-main">
-          <label style={{ marginBottom: "10px;", fontWeight: "bolder" }}>
+          <label style={{ marginBottom: "10px", fontWeight: "bolder" }}>
             Choose logo
           </label>
           <input
@@ -199,6 +209,9 @@ const Landing = () => {
           </button>
         </div>
       ) : null}
+      {
+        //onClick={(e) => history.push("/preview")}
+      }
       <div className="main-preview">
         <Logo logo={logoImg} />
         <Title propTitle={titleUser} />
